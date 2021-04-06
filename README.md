@@ -1,2 +1,2 @@
-# Game "Duck Luck"
-# svetlanabogatyreva.github.io
+## Game "Duck Luck"
+https://svetlanabogatyreva.github.io/
