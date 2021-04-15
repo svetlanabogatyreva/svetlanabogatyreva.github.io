@@ -27,13 +27,19 @@
             }
         })
         .then(ysdk => {
-            ysdk.adv.showFullscreenAdv();
-	    window.ysdk = ysdk;
+           
         });
 	
-	function ShowAd() {
-		window.ysdk.adv.showFullscreenAdv();
-	}
+	ysdk.adv.showFullscreenAdv({
+          callbacks: {
+      onClose: function(wasShown) {
+         // some action after close
+      },
+          onError: function(error) {
+         // some action on error
+      }
+   }
+})
 </script>
 
 </head>
