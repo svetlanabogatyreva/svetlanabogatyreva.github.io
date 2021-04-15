@@ -19,8 +19,7 @@
 <!-- Yandex Games SDK -->
 <script src="https://yandex.ru/games/sdk/v2"></script>
 <script>
-    YaGames
-        .init({
+    YaGames.init({
             adv: {
                 onAdvClose: wasShown => {
                       console.info('adv closed!');
@@ -28,8 +27,13 @@
             }
         })
         .then(ysdk => {
-            // ...
+            ysdk.adv.showFullscreenAdv();
+	    window.ysdk = ysdk;
         });
+	
+	function ShowAd() {
+		window.ysdk.adv.showFullscreenAdv();
+	}
 </script>
 
 </head>
