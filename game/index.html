@@ -18,29 +18,43 @@
 	
 <!-- Yandex Games SDK -->
 <script src="https://yandex.ru/games/sdk/v2"></script>
-<script>
-    YaGames.init({
+   <script>
+        YaGames.init({
             adv: {
                 onAdvClose: wasShown => {
-                      console.info('adv closed!');
+                    console.info('adv closed!');
                 }
             }
         })
         .then(ysdk => {
-           
+            ysdk.adv.showFullscreenAdv();
+
+            const buttonElem = document.querySelector('#button');
+
+            let commonCounter = 0;
+            buttonElem.addEventListener('click', () => {
+                let counter = 0;
+
+                function getCallback(callbackName) {
+                    return () => {
+                        counter += 1;
+                        commonCounter += 1;
+
+                        console.log(`showFullscreenAdv; callback ${callbackName}; ${counter} call`);
+                    }
+                }
+
+                ysdk.adv.showFullscreenAdv({
+                    callbacks: {
+                        onClose: getCallback('onClose'),
+                        onOpen: getCallback('onOpen'),
+                        onError: getCallback('onError'),
+                        onOffline: getCallback('onOffline')
+                    }
+                });
+            });
         });
-	
-	ysdk.adv.showFullscreenAdv({
-          callbacks: {
-      onClose: function(wasShown) {
-         // some action after close
-      },
-          onError: function(error) {
-         // some action on error
-      }
-   }
-})
-</script>
+    </script>
 
 </head>
 <body>
