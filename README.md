@@ -1,4 +1,4 @@
-## My game "Duck Luck"
+## my games
 
 [game1](https://svetlanabogatyreva.github.io/game)
 
