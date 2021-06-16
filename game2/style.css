@@ -3,7 +3,11 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	
-	background: #161616;
+	background-image: url(icons/icon-16.png);
+	/*background-position: left top;*/
+    	background-repeat: repeat, repeat;
+	
+	/*background: #161616;*/
 	color: white;
 }
 
