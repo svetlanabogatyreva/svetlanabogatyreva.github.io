@@ -4,8 +4,8 @@ html, body {
 	overflow: hidden;
 	
 	background-image: url(icons/icon-16.png);
-	background-position: left top;
-    	background-repeat: repeat;
+	/*background-position: left top;*/
+    	background-repeat: repeat, repeat;
 	
 	/*background: #161616;*/
 	color: white;
