@@ -3,6 +3,10 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	
+	background-image: url(images/shared-0-sheet1.png);
+	background-position: left, top;
+    	background-repeat: repeat-y, repeat-y;
+	
 	background: #161616;
 	color: white;
 }
